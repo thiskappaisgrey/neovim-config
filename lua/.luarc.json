@@ -1,0 +1,27 @@
+{
+    "workspace.library": [
+        "/home/thanawat/.local/share/nvim/lazy/neodev.nvim/types/stable",
+        "/nix/store/4wq4i3zfc9g0g5b0d94rm36d9pfa4fqz-neovim-unwrapped-0.9.4/share/nvim/runtime/lua",
+        "/home/thanawat/.local/share/nvim/lazy/Comment.nvim/lua",
+        "/home/thanawat/.local/share/nvim/lazy/cmp-nvim-lsp/lua",
+        "/home/thanawat/.local/share/nvim/lazy/which-key.nvim/lua",
+        "/home/thanawat/.local/share/nvim/lazy/nvim-cmp/lua",
+        "/home/thanawat/.local/share/nvim/lazy/nvim-treesitter/lua",
+        "/home/thanawat/.local/share/nvim/lazy/plenary.nvim/lua",
+        "/home/thanawat/.local/share/nvim/lazy/LuaSnip/lua",
+        "/home/thanawat/.local/share/nvim/lazy/catppuccin/lua",
+        "/home/thanawat/.local/share/nvim/lazy/neodev.nvim/lua",
+        "/home/thanawat/.local/share/nvim/lazy/telescope.nvim/lua",
+        "/home/thanawat/.local/share/nvim/lazy/trouble.nvim/lua",
+        "/home/thanawat/.local/share/nvim/lazy/lsp-zero.nvim/lua",
+        "/home/thanawat/.local/share/nvim/lazy/lazy.nvim/lua",
+        "/home/thanawat/.local/share/nvim/lazy/playground/lua",
+        "/home/thanawat/.local/share/nvim/lazy/commander.nvim/lua",
+        "/home/thanawat/.local/share/nvim/lazy/neoconf.nvim/lua",
+        "/home/thanawat/.local/share/nvim/lazy/nvim-web-devicons/lua",
+        "/home/thanawat/.local/share/nvim/lazy/nvim-lspconfig/lua",
+        "/home/thanawat/.config/nvim/lua",
+        "${3rd}/luv/library",
+        "${3rd}/luassert/library"
+    ]
+}
