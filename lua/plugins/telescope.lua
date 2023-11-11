@@ -9,5 +9,9 @@ return {
 	lazy = false
     },
 
-      "nvim-lua/plenary.nvim"
+      "nvim-lua/plenary.nvim",
+    {
+	    'stevearc/dressing.nvim',
+	    opts = {},
+    }
 }

@@ -6,7 +6,8 @@ return {
 	{ "FeiyouG/commander.nvim",  dependencies = { "nvim-telescope/telescope.nvim" },
 
 	keys = {
-		{ "<leader>b", "<CMD>Telescope commander<CR>", mode = "n" },
+		{ "<leader>bd", "<CMD>Telescope commander<CR>", mode = "n" },
+		{ "<leader>bb", "<CMD>Telescope buffers<CR>", mode = "n" },
 		{ "<leader>wh", "<cmd>split<cr>", mode = "n", desc = "Split window horizontally"},
 		{ "<leader>wv", "<cmd>vsplit<cr>", mode = "n", desc = "Split window veritically"},
 		{ "<leader>wo", "<cmd>only<cr>", mode = "n", desc = "Only window"},

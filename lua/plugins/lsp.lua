@@ -20,18 +20,18 @@ config = function()
 	lsp.on_attach(function(client, bufnr)
   	-- see :help lsp-zero-keybindings
   	-- to learn the available actions
-	 local opts = {buffer = bufnr, remap = false}
+	 local opts =  function(desc) return {buffer = bufnr, remap = false, desc = desc } end
 	 -- TODO might want to use some otehr mechanism..?
-	 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-	 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+	 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { buffer = bufnr, remap = false, desc = "Goto Definition"})
+	 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts("Hover"))
 	 -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-	 vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-	 vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-	 vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-	 vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-	 vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-	 vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-	 vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+	 vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts("Open Diagnostic"))
+	 vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts("Goto next diagnostic"))
+	 vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts("Goto prev diagnostic"))
+	 vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts("Code action"))
+	 vim.keymap.set("n", "<leader>cr", function() vim.lsp.buf.references() end, opts("References"))
+	 vim.keymap.set("n", "<leader>cn", function() vim.lsp.buf.rename() end, opts("Rename"))
+	 vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts("Signature Help"))
 	end)
 	lsp.setup_servers({ 'rust_analyzer'})
 end,
