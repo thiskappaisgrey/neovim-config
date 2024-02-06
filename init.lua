@@ -3,24 +3,37 @@
 -- pick your plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+        vim.fn.system({
+                "git",
+                "clone",
+                "--filter=blob:none",
+                "https://github.com/folke/lazy.nvim.git",
+                "--branch=stable", -- latest stable release
+                lazypath,
+        })
 end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 vim.wo.relativenumber = true
 vim.filetype.add({
-	extension = {
-		egg = "lisp"
-	}
+        extension = {
+                egg = "lisp"
+        }
 })
 vim.opt.expandtab = true
+
+vim.g.haskell_tools = {
+        hls = {
+                settings = {
+                        haskell = {
+                                plugin =
+                                { stan = { globalOn = false }
+                                }
+                        }
+                }
+        },
+}
+
 -- vim.map.
 require("lazy").setup("plugins")

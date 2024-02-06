@@ -80,6 +80,11 @@ return {
                         -- or leave it empty to use the default settings
                         -- refer to the configuration section below
                 }
+        },
+        {
+                "NoahTheDuke/vim-just",
+                -- ft = { 'just' },
+                lazy = false,
         }
 
 }

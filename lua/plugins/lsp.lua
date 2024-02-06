@@ -37,9 +37,9 @@ return {
                                         -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
                                         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
                                                 opts("Open Diagnostic"))
-                                        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end,
+                                        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end,
                                                 opts("Goto next diagnostic"))
-                                        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end,
+                                        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end,
                                                 opts("Goto prev diagnostic"))
                                         vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end,
                                                 opts("Code action"))
