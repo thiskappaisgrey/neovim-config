@@ -3,18 +3,27 @@ return {
                 "catppuccin/nvim",
                 name = "catppuccin",
                 priority = 1000,
-                lazy = false
-                -- config = function()
-                -- 	require("catppuccin")
-                -- 	vim.cmd 'colorscheme catppuccin'
-                -- end
+                lazy = false,
+                config = function()
+                        require("catppuccin")
+                        -- vim.cmd 'colorscheme catppuccin'
+                end
         },
         {
                 "shaunsingh/nord.nvim",
                 priority = 1000,
+                -- config = function()
+                --         require("nord")
+                --         vim.cmd 'colorscheme nord'
+                -- end
+        },
+        {
+                "sainnhe/everforest",
+                priority = 1000,
                 config = function()
-                        require("nord")
-                        vim.cmd 'colorscheme nord'
+                        vim.g.everforest_enable_italic = true
+                        vim.cmd.colorscheme('everforest')
+                        vim.o.background = "dark"
                 end
         },
         { "folke/neoconf.nvim", cmd = "Neoconf" },

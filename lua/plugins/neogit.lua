@@ -1,5 +1,6 @@
 return {
         "NeogitOrg/neogit",
+        tag = "v0.0.1",
         keys = {
                 { "<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit" }
         },

@@ -14,9 +14,52 @@ return {
                         -- I can have haskell-tools + rust-tools set up their own servers
                         default_setup("pyright")
                         default_setup("nil_ls")
-                        default_setup("zls")
-                        default_setup("svls")
+                        -- default_setup("zls")
                         default_setup("ccls")
+                        default_setup("nickel_ls")
+                        default_setup("gleam")
+                        default_setup("gopls")
+                        -- default_setup("emmet_language_server")
+                        default_setup("tailwindcss")
+                        default_setup("dafny")
+                        default_setup("ocamllsp")
+                        default_setup("typst_lsp")
+                        default_setup("unison")
+
+                        lspconfig["zls"].setup {
+                                settings = {
+                                        ['zls'] = {
+                                                enable_build_on_save = true,
+                                                build_on_save_step = "check"
+                                        },
+                                },
+                        }
+
+                        lspconfig.emmet_language_server.setup({
+                                filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact" },
+                                -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
+                                -- **Note:** only the options listed in the table are supported.
+                                init_options = {
+                                        ---@type table<string, string>
+                                        includeLanguages = {},
+                                        --- @type string[]
+                                        excludeLanguages = {},
+                                        --- @type string[]
+                                        extensionsPath = {},
+                                        --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/preferences/)
+                                        preferences = {},
+                                        --- @type boolean Defaults to `true`
+                                        showAbbreviationSuggestions = true,
+                                        --- @type "always" | "never" Defaults to `"always"`
+                                        showExpandedAbbreviation = "always",
+                                        --- @type boolean Defaults to `false`
+                                        showSuggestionsAsSnippets = false,
+                                        --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/syntax-profiles/)
+                                        syntaxProfiles = {},
+                                        --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
+                                        variables = {},
+                                },
+                        })
 
                         vim.api.nvim_create_autocmd('LspAttach', {
                                 desc = 'LSP Actions',
@@ -106,7 +149,13 @@ return {
                                 -- },
                         })
                 end
-        }
+        },
+        {
+                "olrtg/nvim-emmet",
+                config = function()
+                        vim.keymap.set({ "n", "v" }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
+                end,
+        },
 
 
 }
