@@ -94,6 +94,10 @@ return {
                 "NoahTheDuke/vim-just",
                 -- ft = { 'just' },
                 lazy = false,
+        },
+        {
+                url = "https://git.sr.ht/~torresjrjr/vim-haredoc",
+                lazy = false
         }
 
 }

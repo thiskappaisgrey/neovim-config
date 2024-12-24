@@ -88,11 +88,21 @@ return {
                                                 opts("Code action"))
                                         vim.keymap.set("n", "<leader>cr", function() vim.lsp.buf.references() end,
                                                 opts("References"))
-                                        vim.keymap.set('n', '<leader>cd', vim.lsp.buf.type_definition, opts("Type def"))
+                                        vim.keymap.set('n', '<leader>ct', vim.lsp.buf.type_definition, opts("Type def"))
+                                        vim.keymap.set('n', '<leader>ce', function()
+                                                vim.diagnostic.setqflist({
+                                                        severity = {
+                                                                vim.diagnostic.severity.ERROR,
+                                                        }
+                                                })
+                                        end, opts("Errors"))
+                                        vim.keymap.set('n', '<leader>cd', vim.diagnostic.setqflist, opts("Diagnostics"))
                                         vim.keymap.set("n", "<leader>cn", function() vim.lsp.buf.rename() end,
                                                 opts("Rename"))
                                         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end,
                                                 opts("Signature Help"))
+                                        vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>")
+                                        vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>")
                                 end
                         })
                 end,
